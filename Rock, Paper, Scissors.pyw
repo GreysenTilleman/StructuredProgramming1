@@ -1,33 +1,32 @@
-Python 3.2.2 (default, Sep  4 2011, 09:51:08) [MSC v.1500 32 bit (Intel)] on win32
-Type "copyright", "credits" or "license()" for more information.
->>> #!/usr/bin/env python3
->>> # Rock Paper Scissors: The Video Game
->>> import random
->>> import time
->>> 
->>> rock = 1
->>> paper = 2
->>> scissors = 3
->>> 
->>> names = { rock: "Rock", paper: "Paper", scissors: "Scissors" }
->>> rules = { rock: scissors, paper: rock, scissors: paper }
->>> 
->>> player_score = 0
->>> computer_score = 0
->>> 
->>> def start():
+
+#!/usr/bin/env python3
+# Rock Paper Scissors: The Video Game
+import random
+import time
+ 
+rock = 1
+paper = 2
+scissors = 3
+
+names = { rock: "Rock", paper: "Paper", scissors: "Scissors" }
+rules = { rock: scissors, paper: rock, scissors: paper }
+ 
+player_score = 0
+computer_score = 0
+ 
+def start():
 	print("Let's play a game of Rock, Paper, Scissors.")
 	while game():
 		pass
 	scores()
 
->>> def game():
+def game():
 	player = move()
 	computer = random.randint(1,3)
 	result(player, computer)
 	return play_again()
 
->>> def move():
+def move():
 	while True:
 		print
 		player = input("Rock, = 1\nPaper = 2\nScissors = 3\nMake a move ")
@@ -39,7 +38,7 @@ Type "copyright", "credits" or "license()" for more information.
 			pass
 		print("Oops! I didn't understand that. Please enter 1, 2 , or 3")
 
->>> def result(player, computer):
+def result(player, computer):
 	print("1...")
 	time.sleep(1)
 	print("2...")
@@ -59,7 +58,7 @@ Type "copyright", "credits" or "license()" for more information.
 			computer_score += 1
 
 			
->>> def play_again():
+def play_again():
 	answer = raw_imput("Would you like to play again? y/n: ")
 	if answer in("y", "Y", "yes", "Yes", "Of course!"):
 		return answer
@@ -67,13 +66,13 @@ Type "copyright", "credits" or "license()" for more information.
 		print("Thank you very much for playing our game. See you next time!")
 
 		
->>> def scores():
+def scores():
 	global player_score, computer_score
 	print("HIGH SCORES")
 	print("Player: ", player_score)
 	print("Computer: ", computer_score)
 
 	
->>> if __name__ == '__main__':
+if __name__ == '__main__':
 	start()
 	
